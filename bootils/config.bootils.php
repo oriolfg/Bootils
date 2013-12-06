@@ -1,4 +1,12 @@
 <?php
+
+/**
+ * Bootils Configuration file
+ *
+ * Modify the options according to your needs
+ *
+ */
+
 // REGIONAL CONFIGURATION
 $_bootils['LANGUAGE_LOCALE'] = 'ca_ES';// Default value is en_GB
 $_bootils['DEFAULT_DATE_FORMAT'] = '%A, %e de %B de %Y';// Default value is %A %d %B %

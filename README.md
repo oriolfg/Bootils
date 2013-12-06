@@ -544,7 +544,7 @@ bootils/
 
 Read the atached [LICENSE](https://github.com/oriolet/bootils/blob/master/LICENSE) file
 
-## <a name="downlod"></a> Download
+## <a name="download"></a> Download
 [top](#top)
 
 Less than 300 KB
