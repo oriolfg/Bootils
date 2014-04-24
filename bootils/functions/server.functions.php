@@ -58,9 +58,9 @@ class server extends bootils{
     function userLanguage(){
     if(!isset($_SESSION['user_language'])){
         if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
-            $values=preg_split('/;/',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
+            $values=preg_split('/;|,/',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
         }else{
-            $values=preg_split('/;/','en');
+            $values=preg_split('/;|,/','en');
         }
         $values=preg_split('/,/',$values[0]);
         $userlangs=array();
