@@ -62,21 +62,21 @@ class server extends bootils{
         }else{
             $values=preg_split('/;|,/','en');
         }
-        $values=preg_split('/,/',$values[0]);
         $userlangs=array();
         foreach($values as $val){
-            $tmp=substr(str_replace(' ','',$val), 0, 2);
+          if(substr(str_replace(' ','',str_replace('-','_',$val)), 0, 2)!='q='){
+            $tmp=str_replace(' ','',str_replace('-','_',$val));
             if(!in_array($tmp, $userlangs)){
                 $userlangs[]=$tmp;
             }
-        }
-        // If the user has activated the Catalan,Euskera or Galego but not Spanish, Spanish add at the end of the list of priorities
-        if((in_array('ca', $userlangs)||in_array('eu', $userlangs)||in_array('gl', $userlangs))&&!in_array('es', $userlangs)){
-            $userlangs[]='es';
+          }
         }
         // If the user does not have English, added to the end of the list of priorities
         if(!in_array('en', $userlangs)){
             $userlangs[]='en';
+        }
+        if(!in_array('en_GB', $userlangs)){
+            $userlangs[]='en_GB';
         }
         return $userlangs;
     }
