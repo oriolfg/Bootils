@@ -25,6 +25,9 @@ require_once BOOTILS_DIR . 'config.bootils.php';
 foreach($_bootils as $name => $value){
     eval('if(!defined("'.$name.'")){define( "'.$name.'", "'.$value.'" );}');    
 }
+unset($_bootils);
+unset($name);
+unset($value);
 // Define default values
 if(!defined("LANGUAGE_LOCALE")){
     define( 'LANGUAGE_LOCALE', 'en_GB' );
@@ -43,6 +46,7 @@ if(!defined("DEFAULT_THOUSAND_SEPARATOR")){
 if(defined("KINT") && KINT==true &&  file_exists(BOOTILS_DIR . 'third/kint/Kint.class.php')){
     require_once BOOTILS_DIR . 'third/kint/Kint.class.php';
 }
+unset($_kint_settings);
 // require_once for phpmailer debug class
 if(defined("SWIFTMAILER") && SWIFTMAILER==true &&  file_exists(BOOTILS_DIR . 'third/swift/swift_required.php')){
     require_once BOOTILS_DIR . 'third/swift/swift_required.php';
@@ -54,6 +58,7 @@ if(is_array($installed_locales)){
 }else{
     $installed_locales= array();
 }
+unset($installed_locales);
 if(defined("LANGUAGE_LOCALE")&&in_array(LANGUAGE_LOCALE, $installed_locales)){
    setlocale(LC_ALL, LANGUAGE_LOCALE); 
 }elseif(defined("LANGUAGE_LOCALE")){
@@ -61,18 +66,18 @@ if(defined("LANGUAGE_LOCALE")&&in_array(LANGUAGE_LOCALE, $installed_locales)){
 }
 // configure error_reporting from config.bootils file
 if(defined("ERROR_REPORTING") && ERROR_REPORTING==true){
-    $disable=array();
-    if(defined("HIDE_ERROR") && HIDE_ERROR==true){$disable[]='E_ERROR';}
-    if(defined("HIDE_RECOVERABLE_ERROR") && HIDE_RECOVERABLE_ERROR==true){$disable[]='E_RECOVERABLE_ERROR';}
-    if(defined("HIDE_WARNING") && HIDE_WARNING==true){$disable[]='E_WARNING';}
-    if(defined("HIDE_PARSE") && HIDE_PARSE==true){$disable[]='E_PARSE';}
-    if(defined("HIDE_STRICT") && HIDE_STRICT==true){$disable[]='E_STRICT';}
-    if(defined("HIDE_NOTICE") && HIDE_NOTICE==true){$disable[]='E_NOTICE';}
-    if(defined("HIDE_DEPRECATED") && HIDE_DEPRECATED==true){$disable[]='E_DEPRECATED';}
-    if(defined("HIDE_USER_DEPRECATED") && HIDE_USER_DEPRECATED==true){$disable[]='E_USER_DEPRECATED';}
-    $disable=implode('|',$disable);
-    if($disable!=''){
-        eval("error_reporting(E_ALL & ~(".$disable."));");
+    $tmp=array();
+    if(defined("HIDE_ERROR") && HIDE_ERROR==true){$tmp[]='E_ERROR';}
+    if(defined("HIDE_RECOVERABLE_ERROR") && HIDE_RECOVERABLE_ERROR==true){$tmp[]='E_RECOVERABLE_ERROR';}
+    if(defined("HIDE_WARNING") && HIDE_WARNING==true){$tmp[]='E_WARNING';}
+    if(defined("HIDE_PARSE") && HIDE_PARSE==true){$tmp[]='E_PARSE';}
+    if(defined("HIDE_STRICT") && HIDE_STRICT==true){$tmp[]='E_STRICT';}
+    if(defined("HIDE_NOTICE") && HIDE_NOTICE==true){$tmp[]='E_NOTICE';}
+    if(defined("HIDE_DEPRECATED") && HIDE_DEPRECATED==true){$tmp[]='E_DEPRECATED';}
+    if(defined("HIDE_USER_DEPRECATED") && HIDE_USER_DEPRECATED==true){$tmp[]='E_USER_DEPRECATED';}
+    $tmp=implode('|',$tmp);
+    if($tmp!=''){
+        eval("error_reporting(E_ALL & ~(".$tmp."));");
     }else{
         eval("error_reporting(E_ALL);");
     }
@@ -88,24 +93,27 @@ class Bootils
 {
     public static function _init()
 	{
-            $dir=opendir(BOOTILS_DIR.'functions/');
-            while ($object = readdir($dir))
+            $tmp=opendir(BOOTILS_DIR.'functions/');
+            while ($object = readdir($tmp))
             {
                 if (strtolower(substr(strrchr($object, '.'),1))=='php')
                 {
                     require_once BOOTILS_DIR.'functions/'.$object;
                 }
             }
+            unset($tmp);
+            unset($object);
 	}
 }
-$dir=opendir(BOOTILS_DIR.'shortcuts/');
-while ($object = readdir($dir))
+$tmp=opendir(BOOTILS_DIR.'shortcuts/');
+while ($object = readdir($tmp))
 {
     if (strtolower(substr(strrchr($object, '.'),1))=='php')
     {
         require_once BOOTILS_DIR.'shortcuts/'.$object;
     }
 }
-
+unset($tmp);
+unset($object);
 Bootils::_init();
 ?>

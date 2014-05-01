@@ -2,6 +2,9 @@
 class date extends bootils{
     
     function unix2locale($value,$format){
+
+        //$format = ((strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') ? '%#d' : '%e');
+
         if(empty($value)){
             $value=time();
         }

@@ -24,8 +24,8 @@ $_bootils['SWIFTMAILER'] = true;// Don't like SWIFT MAILER?, you are free to del
 $_bootils['MAIL_CHARSET']='UTF-8';// Default value is UTF-8
 $_bootils['MAIL_CHARSET_PLAIN']='UTF-8';// Default value is UTF-8
 $_bootils['MAIL_CHARSET_HTML']='UTF-8';// Default value is UTF-8
-$_bootils['MAIL_SENDER_MAIL']="oriolf@calidae.com";// Default value is blank
-$_bootils['MAIL_SENDER_NAME']="Oriol";// Default value is blank
+$_bootils['MAIL_SENDER_MAIL']="sample@remitent.mail";// Default value is blank
+$_bootils['MAIL_SENDER_NAME']="Name of remitent";// Default value is blank
 
 // SMTP MAIL OPTION (works only if SWIFTMAILES IS ENABLED)
 $_bootils['SMTP_HOST']="84.20.14.216";// Default value is localhost
