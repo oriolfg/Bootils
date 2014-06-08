@@ -56,30 +56,38 @@ class server extends bootils{
         exit;
     }
     function userLanguage(){
-    if(!isset($_SESSION['user_language'])){
-        if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
-            $values=preg_split('/;|,/',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
-        }else{
-            $values=preg_split('/;|,/','en');
-        }
-        $userlangs=array();
-        foreach($values as $val){
-          if(substr(str_replace(' ','',str_replace('-','_',$val)), 0, 2)!='q='){
-            $tmp=str_replace(' ','',str_replace('-','_',$val));
-            if(!in_array($tmp, $userlangs)){
-                $userlangs[]=$tmp;
+      if(!isset($_SESSION['user_language'])){
+          if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
+              $values=preg_split('/;|,/',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
+          }else{
+              $values=preg_split('/;|,/','en');
+          }
+          $userlangs=array();
+          foreach($values as $val){
+            if(substr(str_replace(' ','',str_replace('-','_',$val)), 0, 2)!='q='){
+              $tmp=str_replace(' ','',str_replace('-','_',$val));
+              if(!in_array($tmp, $userlangs)){
+                  $userlangs[]=$tmp;
+              }
             }
           }
-        }
-        // If the user does not have English, added to the end of the list of priorities
-        if(!in_array('en', $userlangs)){
-            $userlangs[]='en';
-        }
-        if(!in_array('en_GB', $userlangs)){
-            $userlangs[]='en_GB';
-        }
-        return $userlangs;
+          // If the user does not have English, added to the end of the list of priorities
+          if(!in_array('en', $userlangs)){
+              $userlangs[]='en';
+          }
+          if(!in_array('en_GB', $userlangs)){
+              $userlangs[]='en_GB';
+          }
+          return $userlangs;
+      }
     }
-}
+    function defineLocale($value){
+        if(isset($value)){
+            $locale = setlocale(LC_ALL, explode(',',$value)); 
+        }else{
+            $locale = setlocale(LC_ALL, DEFAULT_LANGUAGE_LOCALE); 
+        }
+        return $locale;
+    }
 }
 ?>

@@ -27,4 +27,11 @@ if ( !function_exists( 'userLanguage' ) ) {
         return $class->userLanguage();
     }
 }
+if ( !function_exists( 'defineLocale' ) ) {
+    function defineLocale($value=null)
+    {
+        $class= new server();
+        return $class->defineLocale($value);
+    }
+}
 ?>

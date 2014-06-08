@@ -29,8 +29,8 @@ unset($_bootils);
 unset($name);
 unset($value);
 // Define default values
-if(!defined("LANGUAGE_LOCALE")){
-    define( 'LANGUAGE_LOCALE', 'en_GB' );
+if(!defined("DEFAULT_LANGUAGE_LOCALE")){
+    define( 'DEFAULT_LANGUAGE_LOCALE', 'en_GB' );
 }
 if(!defined("DEFAULT_DATE_FORMAT")){
     define( 'DEFAULT_DATE_FORMAT', '%A %d %B %Y' );
@@ -50,19 +50,6 @@ unset($_kint_settings);
 // require_once for phpmailer debug class
 if(defined("SWIFTMAILER") && SWIFTMAILER==true &&  file_exists(BOOTILS_DIR . 'third/swift/swift_required.php')){
     require_once BOOTILS_DIR . 'third/swift/swift_required.php';
-}
-// configure locales from config.bootils file
-$installed_locales = @shell_exec('locale -a');
-if(is_array($installed_locales)){
-    $installed_locales = explode("\n" , $installed_locales);
-}else{
-    $installed_locales= array();
-}
-unset($installed_locales);
-if(defined("LANGUAGE_LOCALE")&&in_array(LANGUAGE_LOCALE, $installed_locales)){
-   setlocale(LC_ALL, LANGUAGE_LOCALE); 
-}elseif(defined("LANGUAGE_LOCALE")){
-    setlocale(LC_ALL, LANGUAGE_LOCALE.'.utf8'); 
 }
 // configure error_reporting from config.bootils file
 if(defined("ERROR_REPORTING") && ERROR_REPORTING==true){
