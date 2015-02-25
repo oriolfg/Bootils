@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Bootils by oriolet</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Bootils</h1>
+          <h2>Over 25 basic functions that your PHP projects must have</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/oriolet/Bootils/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/oriolet/Bootils/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/oriolet/Bootils" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h3>
+<a id="bootils-is-easy" class="anchor" href="#bootils-is-easy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bootils is easy!</h3>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in convallis sapien. Sed pretium placerat tortor, in vulputate libero dapibus at. Curabitur imperdiet lectus felis, nec dictum lorem venenatis sed. Quisque in molestie lacus, ut rutrum dolor. Sed neque erat, commodo non magna eget.</p>
+
+<h2>
+<a id="start" class="anchor" href="#start" aria-hidden="true"><span class="octicon octicon-link"></span></a>Start</h2>
+
+<pre><code>require_once('bootils/start.bootils.php');
+</code></pre>
+
+<h2>
+<a id="configure" class="anchor" href="#configure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure</h2>
+
+<p>Edit config.bootils.php to configure bootils and customize it!!</p>
+
+<h2>
+<a id="regional-configuration" class="anchor" href="#regional-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Regional configuration</h2>
+
+<pre><code>$_bootils['DEFAULT_LANGUAGE_LOCALE'] = 'ca_ES';// Default value is en_GB
+$_bootils['DEFAULT_DATE_FORMAT'] = '%A, %e de %B de %Y';// Default value is %A %d %B %
+$_bootils['DEFAULT_COMA_SEPARATOR'] = ',';// Default value is .
+$_bootils['DEFAULT_THOUSAND_SEPARATOR'] = '.';// Default value is ,
+</code></pre>
+
+<h2>
+<a id="bootils-include-kint" class="anchor" href="#bootils-include-kint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bootils include Kint!</h2>
+
+<p>You can enable it easy.</p>
+
+<pre><code>$_bootils['KINT'] = true;
+</code></pre>
+
+<h2>
+<a id="bootils-include-swiftmailer" class="anchor" href="#bootils-include-swiftmailer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bootils include Swiftmailer!</h2>
+
+<p>You can enable it easy.</p>
+
+<pre><code>$_bootils['SWIFTMAILER'] = true;
+</code></pre>
+
+<h2>
+<a id="general-mail-configuration" class="anchor" href="#general-mail-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>General mail configuration</h2>
+
+<p>If you use Swiftmail or not, some mail settings can be configured</p>
+
+<pre><code>$_bootils['MAIL_CHARSET']='UTF-8';// Default value is UTF-8
+$_bootils['MAIL_CHARSET_PLAIN']='UTF-8';// Default value is UTF-8
+$_bootils['MAIL_CHARSET_HTML']='UTF-8';// Default value is UTF-8
+$_bootils['MAIL_SENDER_MAIL']="sender@example.org";// Default value is blank
+$_bootils['MAIL_SENDER_NAME']="Sender Name";// Default value is blank
+</code></pre>
+
+<h2>
+<a id="smtp-mail-configuration" class="anchor" href="#smtp-mail-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Smtp mail configuration</h2>
+
+<p>These functions simply set them, if Swiftmail is enabled</p>
+
+<pre><code>$_bootils['SMTP_HOST']="localhost";// Default value is localhost
+$_bootils['SMTP_USER']="mailusername";// Default value is blank
+$_bootils['SMTP_PASSWORD']="mailpassword";// Default value is blank
+$_bootils['SMTP_PORT']=25;// Default value is 25
+
+$_bootils['SMTP_ANTIFLOOD']=true;// For massive sending (default true)
+$_bootils['SMTP_ANTIFLOOD_MAILS']=100;// number of emails between breaks (default 100)
+$_bootils['SMTP_ANTIFLOOD_PAUSE']=30;// Seconds-long break before continuing (default 30)
+</code></pre>
+
+<h2>
+<a id="errors-configuration" class="anchor" href="#errors-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Errors configuration</h2>
+
+<p>Define the errors you want to register, and if you want to display it on screen</p>
+
+<pre><code>$_bootils['ERROR_REPORTING']=true;
+$_bootils['HIDE_ERROR'] = true;
+$_bootils['HIDE_RECOVERABLE_ERROR'] = true;
+$_bootils['HIDE_WARNING'] = true;
+$_bootils['HIDE_PARSE'] = true;
+$_bootils['HIDE_STRICT'] = true;
+$_bootils['HIDE_NOTICE'] = true;
+$_bootils['HIDE_USER_DEPRECATED'] = true;
+$_bootils['HIDE_DEPRECATED'] = true;
+$_bootils['DISPLAY_ERRORS']=true; //To see the errors on the web or only in log files
+</code></pre>
+        </section>
+
+        <footer>
+          Bootils is maintained by <a href="https://github.com/oriolet">oriolet</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>

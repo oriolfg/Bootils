@@ -1,6 +1,6 @@
 # <a name="top"></a> [Bootils](http://bootils.oriolet.net)
 
-With only one <b>include_once</b>, enjoy PHP popular libraries and more than 25 quick access basic functions
+Over 25 basic functions that your PHP projects must have
 
 ## Table of contents
 * [Quick start](#start)
