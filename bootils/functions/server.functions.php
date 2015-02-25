@@ -84,8 +84,10 @@ class server extends bootils{
     function defineLocale($value){
         if(isset($value)){
             $locale = setlocale(LC_ALL, explode(',',$value)); 
+            putenv("LC_ALL=$value");
         }else{
-            $locale = setlocale(LC_ALL, DEFAULT_LANGUAGE_LOCALE); 
+            $locale = setlocale(LC_ALL, DEFAULT_LANGUAGE_LOCALE);
+            putenv("LC_ALL=DEFAULT_LANGUAGE_LOCALE");
         }
         return $locale;
     }
