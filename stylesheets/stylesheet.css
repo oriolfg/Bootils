@@ -90,7 +90,7 @@ header h2 {
 }
 
 .inner {
-  width: 620px;
+  width: 720px;
   margin: 0 auto;
 }
 
@@ -101,12 +101,16 @@ header h2 {
 #downloads {
   margin-bottom: 40px;
 }
+#downloads .button{
+  margin-bottom: 10px;
+}
+
 
 a.button {
   display: block;
   float: left;
-  width: 179px;
-  padding: 12px 8px 12px 8px;
+  width: auto;
+  padding: 12px 24px 12px 8px;
   margin-right: 14px;
   font-size: 15px;
   font-weight: bold;
@@ -161,8 +165,14 @@ a.button span {
 #view-on-github span {
   background: transparent url(../images/octocat-icon.png) 12px 50% no-repeat;
 }
-#view-on-github {
-  margin-right: 0;
+#getting-started span {
+  background: transparent url(../images/getting-started.png) 12px 50% no-repeat;
+}
+#features span {
+  background: transparent url(../images/features.png) 12px 50% no-repeat;
+}
+#home span {
+  background: transparent url(../images/bootils.png) 12px 50% no-repeat;
 }
 
 code, pre {
@@ -356,9 +366,6 @@ footer a:hover {
   }
   #downloads {
     margin-bottom: 25px;
-  }
-  #download-zip, #download-tar-gz {
-    display: none;
   }
   .inner {
     width: 94%;

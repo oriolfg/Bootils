@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Bootils by oriolet</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../images/favicons/apple-touch-icon-76x76.png">
+  <link rel="icon" type="image/png" href="../images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="../images/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#f2f2f2">
+  <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Bootils</h1>
+          <h2>Over 25 basic functions that your PHP projects must have</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="/" id="home" class="button"><span>Homepage</span></a>
+          <a href="/features/" id="features" class="button"><span>Features</span></a>
+          <a href="/getting-started/" id="getting-started" class="button"><span>Geetting started</span></a>
+          <a href="https://github.com/oriolet/Bootils" id="view-on-github" class="button"><span>View on GitHub</span></a>
+          <a href="https://github.com/oriolet/Bootils/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/oriolet/Bootils/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="bootils-is-easy" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h1>
+<h2>
+<a id="start" class="anchor" href="#default" aria-hidden="true"><span class="octicon octicon-link"></span></a>With default values</h2>
+<p>The easiest way is simply a require_once</p>
+
+<pre><code>require_once('bootils/start.bootils.php');</code></pre>
+
+<h2>
+<a id="start" class="anchor" href="#custom" aria-hidden="true"><span class="octicon octicon-link"></span></a>With custom defaults</h2>
+<p>but if you wish or need, you can define default values before the required file bootils file<</p>
+
+<pre><code>// Define default regional values
+$_bootils['DEFAULT_LANGUAGE_LOCALE'] = 'ca_ES'; // Default value is en_GB
+$_bootils['DEFAULT_DATE_FORMAT'] = '%A, %e de %B de %Y'; // Default value is %A %d %B %
+$_bootils['DEFAULT_COMA_SEPARATOR'] = ','; // Default value is .
+$_bootils['DEFAULT_THOUSAND_SEPARATOR'] = '.'; // Default value is ,
+
+// Define external libraries
+$_bootils['KINT'] = true; // Don't like KINT?, you are free to delete the third/kint folder to save space.
+$_bootils['SWIFTMAILER'] = true; // Don't like SWIFTMAILER?, you are free to delete the third/swift folder.
+
+// Define default mail values
+$_bootils['MAIL_CHARSET']='UTF-8'; // Default value is UTF-8
+$_bootils['MAIL_CHARSET_PLAIN']='UTF-8'; // Default value is UTF-8
+$_bootils['MAIL_CHARSET_HTML']='UTF-8'; // Default value is UTF-8
+$_bootils['MAIL_SENDER_MAIL']="sender@example.org"; // Default value is blank
+$_bootils['MAIL_SENDER_NAME']="Sender Name"; // Default value is blank
+
+// Define default smtp mail values (only works if swiftmailer is enabled)
+$_bootils['SMTP_HOST']="localhost"; // Default value is localhost
+$_bootils['SMTP_USER']="mailusername"; // Default value is blank
+$_bootils['SMTP_PASSWORD']="mailpassword"; // Default value is blank
+$_bootils['SMTP_PORT']=25; // Default value is 25
+
+// Define default extra mail values (only works if swiftmailer is enabled)
+$_bootils['SMTP_ANTIFLOOD']=true; // For massive sending (default true)
+$_bootils['SMTP_ANTIFLOOD_MAILS']=100; // number of emails between breaks (default 100)
+$_bootils['SMTP_ANTIFLOOD_PAUSE']=30; // Seconds-long break before continuing (default 30)
+
+// Define php errors
+$_bootils['ERROR_REPORTING']=true; // Sets which PHP errors are reported
+$_bootils['DISPLAY_ERRORS']=true; // Set true to see errors on the web or false to see only in log files
+
+// Define what you want to hide error
+$_bootils['HIDE_ERROR'] = true;
+$_bootils['HIDE_RECOVERABLE_ERROR'] = true;
+$_bootils['HIDE_WARNING'] = true;
+$_bootils['HIDE_PARSE'] = true;
+$_bootils['HIDE_STRICT'] = true;
+$_bootils['HIDE_NOTICE'] = true;
+$_bootils['HIDE_USER_DEPRECATED'] = true;
+$_bootils['HIDE_DEPRECATED'] = true;
+
+// Now we can call bootils with custom default values predefined
+require_once('bootils/start.bootils.php');</code></pre>
+        </section>
+
+        <footer>
+          Bootils is maintained by <a href="https://github.com/oriolet">oriolet</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
