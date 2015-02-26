@@ -75,6 +75,9 @@ header h1 {
   color: #303030;
   letter-spacing: -1px;
 }
+header h1 b{
+  color:#d5000d;
+}
 
 header h2 {
   font-size: 24px;
@@ -178,7 +181,6 @@ a.button span {
 code, pre {
   margin-bottom: 30px;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
-  font-size: 14px;
   color: #222;
 }
 
@@ -186,6 +188,7 @@ code {
   padding: 0 3px;
   background-color: #f2f2f2;
   border: solid 1px #ddd;
+  font-size: 14px;
 }
 
 pre {
@@ -194,6 +197,9 @@ pre {
   color: #f2f2f2;
   text-shadow: none;
   background: #303030;
+  border-radius: 10px;
+  margin-top: 40px;
+  line-height: 1em;
 }
 pre code {
   padding: 0;
@@ -201,7 +207,37 @@ pre code {
   background-color: #303030;
   border: none;
 }
-
+.input, .output, .params{
+  border:solid 1px #ccc;
+  background: #e7e7e7 url(../images/highlight-bg.jpg) top center no-repeat;
+}
+.params code,
+.input code,
+.output code{
+  background-color: transparent;
+  color:#303030;
+}
+.input:before{
+  content:"Input sample:";
+}
+.output:before{
+  content:"Output sample:";
+}
+.callback:before{
+  content:"Callback sample:";
+}
+.params:before{
+  content:"Function structure:";
+}
+pre:before{
+  position: absolute;
+  display:block;
+  margin-top: -44px;
+  margin-left:-10px;
+  color:#ababab !important;
+  font-style: italic;
+  font-size: 1.5em;
+}
 ul, ol, dl {
   margin-bottom: 20px;
 }
@@ -252,6 +288,7 @@ form {
 
 h1 {
   font-size: 32px;
+  color: #d5000d;
 }
 
 h2 {
@@ -349,6 +386,16 @@ footer a:hover {
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
 
+.index{
+  width: 15%;
+  display: inline-block;
+  vertical-align: top;
+  padding-bottom: 20px;
+}
+.index a {
+  font-size: 0.8em;
+}
+
 /* #Media Queries
 ================================================== */
 
@@ -370,6 +417,13 @@ footer a:hover {
   .inner {
     width: 94%;
     margin: 0 auto;
+  }
+  .index{
+    width: 140px;
+    display: inline-block;
+  }
+  index a {
+    font-size: 1em;
   }
 }
 
