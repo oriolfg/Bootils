@@ -1,10 +1,14 @@
 <?php
-class arrays extends bootils{
+namespace Bootils;
+
+class Arrays
+{
     
-    function sortField ($value, $field, $inverse = false) {
+    public function sortField ($value, $field, $inverse = false)
+    {
         $position = array();
         $newRow = array();
-        if($value){
+        if ($value) {
             foreach ($value as $key => $row) {
                     $position[$key]  = $row[$field];
                     $newRow[$key] = $row;
@@ -12,8 +16,7 @@ class arrays extends bootils{
         }
         if ($inverse) {
             arsort($position);
-        }
-        else {
+        } else {
             asort($position);
         }
         $returnArray = array();
@@ -23,4 +26,3 @@ class arrays extends bootils{
         return $returnArray;
     }
 }
-?>
