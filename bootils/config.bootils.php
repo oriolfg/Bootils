@@ -4,11 +4,15 @@
  * Bootils Configuration file
  *
  * Modify the options according to your needs
- *
+ * 
+ * All these variables become a constants in start.bootils.php file if they are not previously defined
+ * 
+ * If you need someone to configure these values ​​dynamically, define the constants after require config.bootils.php and before require start.bootils.php
+ * 
  */
 
 // REGIONAL CONFIGURATION
-$_bootils['LANGUAGE_LOCALE'] = 'ca_ES';// Default value is en_GB
+$_bootils['DEFAULT_LANGUAGE_LOCALE'] = 'ca_ES';// Default value is en_GB
 $_bootils['DEFAULT_DATE_FORMAT'] = '%A, %e de %B de %Y';// Default value is %A %d %B %
 $_bootils['DEFAULT_COMA_SEPARATOR'] = ',';// Default value is .
 $_bootils['DEFAULT_THOUSAND_SEPARATOR'] = '.';// Default value is ,
