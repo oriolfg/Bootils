@@ -8,17 +8,17 @@
  *
  * LICENSE: Read the LICENSE atached file in original package
  *
- * @category   Utilities for Web Developers
+ * @category   Basic utilities for PHP Developers
  * @package    Bootils
  * @author     Oriol Ferràndez Grau <oriolet@oriolet.com>
- * @version    1.0
- * @link       http://bootils.oriolet.com
+ * @version    2.0
+ * @link       http://oriolet.github.io/Bootils/
  */
 
 ini_set("default_charset", "utf-8");
 header('Content-Type: text/html; charset=utf-8');
-define('BOOTILS_DIR', dirname(__FILE__).'/');
 
+define('BOOTILS_DIR', dirname(__FILE__).'/');
 
 require_once BOOTILS_DIR . 'classes/Arrays.php';
 require_once BOOTILS_DIR . 'classes/User.php';

@@ -1,12 +1,16 @@
 # <a name="top"></a> [Bootils](http://bootils.oriolet.net)
 
-Over 25 basic functions that your PHP projects must have
+Bootils - Basic utilities fo PHP developers
 
 Discover more at <a href="http://oriolet.github.io/Bootils/">http://oriolet.github.io/Bootils/</a>
 
+## Author
+
+**Oriol Ferràndez Grau** (Oriolet)
+
 ## License
 
-Read the atached [LICENSE](https://github.com/oriolet/bootils/blob/master/LICENSE) file
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 
 ## Download
 
