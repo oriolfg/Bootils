@@ -1,0 +1,24 @@
+{
+    "name": "oriolet/Bootils",
+    "description": "Bootils - Basic utilities fo PHP developers",
+    "keywords": ["bootils", "php", "utils", "basic"],
+    "type": "library",
+    "homepage": "https://github.com/oriolet/Bootils",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oriol Ferràndez Grau",
+            "homepage": "https://github.com/oriolet"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/oriolet/Bootils/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.0"
+    },
+    "autoload": {
+        "files": ["Bootils/Bootils.php"]
+    },
+}
