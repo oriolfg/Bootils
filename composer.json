@@ -20,5 +20,5 @@
     },
     "autoload": {
         "files": ["Bootils/Bootils.php"]
-    },
+    }
 }
