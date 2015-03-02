@@ -1,9 +1,9 @@
 {
-    "name": "oriolet/Bootils",
+    "name": "oriolet/bootils",
     "description": "Bootils - Basic utilities fo PHP developers",
     "keywords": ["bootils", "php", "utils", "basic"],
     "type": "library",
-    "homepage": "https://github.com/oriolet/Bootils",
+    "homepage": "https://github.com/oriolet/bootils",
     "license": "MIT",
     "authors": [
         {
@@ -12,7 +12,7 @@
         },
         {
             "name": "Contributors",
-            "homepage": "https://github.com/oriolet/Bootils/contributors"
+            "homepage": "https://github.com/oriolet/bootils/contributors"
         }
     ],
     "require": {
