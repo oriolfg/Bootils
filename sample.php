@@ -1,14 +1,16 @@
  <?php 
 require_once 'Bootils.php';
-//require_once BOOTILS_DIR . 'classes/third/kint/Kint.class.php';
-//require_once BOOTILS_DIR . 'classes/third/swift/swift_required.php';
-//require_once BOOTILS_DIR . 'classes/third/PHPMailer-master/PHPMailerAutoload.php';
 
+// Start Bootils
+$bootils = new Bootils\Core();
 
-$Bootils = new Bootils\Core();
+// Change default bootils values to our custom configuration
+$bootils->setLocales('ca_ES.utf8,es_ES.utf8,en_EN.utf8');
+$bootils->setComaSeparator(',');
+$bootils->setThousendSeparator('.');
+$bootils->setDateFormat("%A, %d de %B de %Y");
 
-$Bootils->setDebug(true);
-$Bootils->setLocales('ca_ES.utf8,es_ES.utf8,en_EN.utf8');
-$Bootils->setComaSeparator(',');
-$Bootils->setThousendSeparator('.');
-$Bootils->setDateFormat("'%A, %d de %B de %Y'");
+// Using Bootils
+echo $bootils->unix2locale(strtotime('01-01-2000'));
+echo '<hr>';
+echo $bootils->size2size(1, 'GB', 'MB');

@@ -14,6 +14,6 @@ Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 
 ## Download
 
-Less than 300 KB
+Less than 15 KB
 [Download bootils](https://github.com/oriolet/Bootils/archive/master.zip)
 

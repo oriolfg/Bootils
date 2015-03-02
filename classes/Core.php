@@ -7,7 +7,7 @@ class Core
     public $debug = false;
     // Regional values
     public $locales = "en_GB.utf8";
-    public $date_format = "'%A %d %B %Y'";
+    public $date_format = "%A %d %B %Y";
     public $thousand_separator = ",";
     public $coma_separator = ".";
     // User values
