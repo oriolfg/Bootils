@@ -28,7 +28,7 @@
       <div class="inner">
 
         <header>
-          <h1>Bootils</h1>
+          <h1>B<b>o</b>otils</h1>
           <h2>Basic utilities for PHP developers</h2>
         </header>
 
@@ -45,39 +45,112 @@
 
         <section id="main_content">
           <h1>
-            <a id="bootils-is-easy" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features list
+            <a id="bootils-is-easy" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bootils features
           </h1>
+            <p>Discover all functions of bootils and make your daliy work easy!</p>
+            <div class="index">
+                <h2>Server</h2>
+                <a href="#disableCache"><span>disableCache()</span></a><br />
+                <a href="#redirect"><span>redirect()</span></a><br />
+            </div>
+            <div class="index">
+                <h2>User</h2>
+                <a href="#getUserLanguages"><span>getUserLanguages()</span></a><br />
+                <a href="#getUserIp"><span>getUserIp()</span></a><br />
+            </div>
+            <div class="index">
+                <h2>Dates</h2>
+                <a href="#unix2locale"><span>unix2locale()</span></a><br />
+                <a href="#now"><span>now()</span></a><br />
+            </div>
+            <div class="index">
+                <h2>Array</h2>
+                <a href="#sortByField"><span>sortByField()</span></a><br />
+            </div>
+            <div class="index">
+                <h2>Strings</h2>
+                <a href="#checkLink"><span>checkLink()</span></a><br />
+                <a href="#asciQuotes"><span>asciQuotes()</span></a><br />
+                <a href="#smartQuotes"><span>smartQuotes()</span></a><br />
+                <a href="#string2url"><span>string2url()</span></a><br />
+                <a href="#cut"><span>cut()</span></a><br />
+            </div>
+            <div class="index">
+                <h2>Files</h2>
+                <a href="#dir2array"><span>dir2array()</span></a><br />
+                <a href="#file2base64"><span>file2base64()</span></a><br />
+                <a href="#getMime"><span>getMime()</span></a><br />
+                <a href="#getTime"><span>getTime()</span></a><br />
+                <a href="#getPermissions"><span>getPermissions()</span></a><br />
+                <a href="#getExtension"><span>getExtension()</span></a><br />
+                <a href="#size2size"><span>size2size()</span></a><br />
+                <a href="#fileHash"><span>fileHash()</span></a><br />
+            </div>
+            <div class="index">
+                <h2>Email</h2>
+                <a href="#checkMail"><span>checkMail()</span></a><br />
+                <a href="#encodeMail"><span>encodeMail()</span></a><br />
+                <a href="#encodeMailString"><span>encodeMailString()</span></a><br />
+                <a href="#fastMail"><span>fastMail()</span></a><br />
+            </div>
 
-            <h2>
-              <a id="start" class="anchor" href="#arrays" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working with arrays
-            </h2>
+<hr id="sortByField" />
+<h3>
+    sortByField()
+</h3>
+<p>Sort an multidimensional array based on a specific key</p>
+<pre class="params"><code>array sortByField ( array $array , string $keyName [, bool $invert = false] )</code></pre>
+<pre class="input"><code>array(3) [
+    '0' => array(2) [
+        'title' => 'First title'
+        'description' => 'Lorem ipsum dolor sit amet, consectetur...'
+    ]
+    '1' => array(2) [
+        'title' => 'Second title'
+        'description' => 'Lorem ipsum dolor sit amet, consectetur...'
+    ]
+    '2' => array(2) [
+        'title' => 'Another title'
+        'description' => 'Lorem ipsum dolor sit amet, consectetur...'
+    ]
+]</code></pre>
+            <pre class="callback"><code>$outputArray = sortField($inputArray,'title', true);</code></pre>
+            <pre class="output"><code>array(3) [
+    '0' => array(2) [
+        'title' => 'Second title'
+        'description' => 'Lorem ipsum dolor sit amet, consectetur...'
+    ]
+    '1' => array(2) [
+        'title' => 'First title'
+        'description' => 'Lorem ipsum dolor sit amet, consectetur...'
+    ]
+    '2' => array(2) [
+        'title' => 'Another title'
+        'description' => 'Lorem ipsum dolor sit amet, consectetur...'
+    ]
+]</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#sortField" aria-hidden="true"><span class="octicon octicon-link"></span></a>sortField()
-              </h3>
-              <p>Sort an array based on a specific field</p>
-              <pre><code>$NewArray = sortField($originalArray,'title', true);</code></pre>
-              <p>Array that we want to modify (default null) Field that will mark the new order (default null) Do descending order (default false)</p>
 
-            <h2>
-              <a id="start" class="anchor" href="#dates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working with dates
-            </h2>
 
-              <h3>
-                <a id="start" class="anchor" href="#unix2locale" aria-hidden="true"><span class="octicon octicon-link"></span></a>unix2locale()
-              </h3>
-              <p>Convert a unix date to date format in the regional current locales</p>
-              <pre><code>echo unix2locale(1376049980, '%A, %e de %B de %Y');</code></pre>
-              <p>Unix data to convert (default is current time of server) Format to convert (default format can be pre-configured) Output sample with ca_ES.utf8 locales defined:</p>
-              <pre><code>Divendres,  9 d'agost de 2013</code></pre>
+<hr id="unix2locale" />
+<h3>
+  unix2locale()
+</h3>
+<p>Convert a unix date to format in the regional current locales</p>
+<pre class="params"><code>string unix2locale ( [int $timestamp = time() [, string $format = DEFAULT_DATE_FORMAT]] )</code></pre>
+<pre class="callback"><code>echo unix2locale(1376049980, '%A, %e de %B de %Y');</code></pre>
+<pre class="output"><code>Divendres,  9 d'agost de 2013</code></pre>
+<p>Sample with catalan locales defined (ca_es.utf8)</p>
 
-              <h3>
-                <a id="start" class="anchor" href="#now" aria-hidden="true"><span class="octicon octicon-link"></span></a>now()
-              </h3>
-              <p>Return array of the current datetime in unix, human & object format</p>
-              <pre><code>$currentdate = now();</code></pre>
-              <p>Output sample:</p>
-              <pre><code>array(3) [
+
+
+<hr id="now" /><h3>
+  now()
+</h3>
+<p>Return array of the current datetime in unix, human & object format</p>
+<pre class="params"><code>array now ()</code></pre>
+<pre class="callback"><code>$currentDate = now();</code></pre>
+<pre class="output"><code>array(3) [
     'unix' => integer 1376049980
     'human' => string (29) "Divendres,  9 d'agost de 2013"
     'object' => object DateTime (3) {
@@ -87,128 +160,132 @@
     }
 ]</code></pre>
 
-            <h2>
-              <a id="start" class="anchor" href="#email" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working with email
-            </h2>
 
-              <h3>
-                <a id="start" class="anchor" href="#checkMail" aria-hidden="true"><span class="octicon octicon-link"></span></a>checkMail()
-              </h3>
-              <p>Checks that the mail has the correct format</p>
-              <pre><code>if(checkMail("sample@example.org")){
-    //your action here if mail is correct;
-}else{
-    //your action here if mail is incorrect;
-}</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#encodeMail" aria-hidden="true"><span class="octicon octicon-link"></span></a>encodeMail()
-              </h3>
-              <p>Encode an email to that robots can not read</p>
-              <pre><code>echo encodeMail("sample@example.org");</code></pre>
-              <p>Output visible in html code (for robots)</p>
-              <pre><code>&#115;&#97;&#109;&#112;&#108;&#101;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#111;&#114;&#103;</code></pre>
-              <p>Output visible in the web (for humans)</p>
-              <pre><code>sample@example.org</code></pre>
+<hr id="checkMail" />
+<h3>
+  checkMail()
+</h3>
+<p>Checks that the mail has the correct format</p>
+<pre class="params"><code>bool checkMail( string $email)</code></pre>
+<pre class="callback"><code>echo checkMail("sample@example.org");</code></pre>
+<pre class="output"><code>true</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#encodeMailString" aria-hidden="true"><span class="octicon octicon-link"></span></a>encodeMailString()
-              </h3>
-              <p>Search and encodes emails in a text so that it can be read by robots</p>
-              <pre><code>echo encodeMailString("One or more address sample@example.org in the text");</code></pre>
-              <p>Output visible in html code (for robots)</p>
-              <pre><code>One or more address &#115;&#97;&#109;&#112;&#108;&#101;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#111;&#114;&#103; in the text");</code></pre>
-              <p>Output visible in the web (for humans)</p>
-              <pre><code>One or more address sample@example.org in the text</code></pre>
-              
-              <h3>
-                <a id="start" class="anchor" href="#fastMail" aria-hidden="true"><span class="octicon octicon-link"></span></a>fastMail()
-              </h3>
-              <p>Send one smtp or phpmail with the same function dependent of your configuration</p>
-              <p>Simple usage:</p>
-              <pre><code>$extras['attachment']='./photos/sample_photo.jpg';
+
+<hr id="encodeMail" />
+<h3>
+  encodeMail()
+</h3>
+<p>Encode an email to that robots cannot read</p>
+<pre class="params"><code>string encodeMail( string $email)</code></pre>
+<pre class="callback"><code>echo encodeMail("sample@example.org");</code></pre>
+<pre class="output"><code>&amp;#115;&amp;#97;&amp;#109;&amp;#112;&amp;#108;&amp;#101;&amp;#64;&amp;#101;&amp;#120;&amp;#97;&amp;#109;&amp;#112;&amp;#108;&amp;#101;&amp;#46;&amp;#111;&amp;#114;&amp;#103;</code></pre>
+<p>This string is readable for humans when is printed in html document, but not for robots.</p>
+
+
+
+<hr id="encodeMailString" />
+<h3>
+  encodeMailString()
+</h3>
+<p>Search and encode all emails in  string so that it can be read by robots</p>
+<pre class="params"><code>string encodeMailString( string $string)</code></pre>
+<pre class="callback"><code>echo encodeMailString("One or more address sample@example.org in the text");</code></pre>
+<pre class="output"><code>One or more address &amp;#115;&amp;#97;&amp;#109;&amp;#112;&amp;#108;&amp;#101;&amp;#64;&amp;#101;&amp;#120;&amp;#97;&amp;#109;&amp;#112;&amp;#108;&amp;#101;&amp;#46;&amp;#111;&amp;#114;&amp;#103; in the text");</code></pre>
+<p>This string is readable for humans when is printed in html document, but not for robots.</p>
+
+
+            
+
+<hr id="fastMail" />
+<h3>
+  fastMail()
+</h3>
+<p>Send smtp or phpmail with the same function dependent of your configuration</p>
+<pre class="params"><code>mixed fastMail(string/array $to = null, string $subject = null, string $body = null, array $extras = array())</code></pre>
+<pre class="callback"><code>$extras['attachment']='./photos/sample_photo.jpg';
 fastMail("sample@example.org","my first email","My HTML body",$extras);</code></pre>
-              <p>Advanced usage:</p>
-              <pre><code>/* Configure Senders */
-
-$extras['sender']=array(
+<pre class="callback"><code>// Destinataries list
+$to=array(
     'recipient-with-name@example.org' => 'Recipient Name One',
-    'no-name@example.org', // Note that this is not a key-value pair
+    'no-name@example.org',
     'named-recipient@example.org' => 'Recipient Name Two'
 );
 
-/* Configure Copy Recipients */
-
+// Copy Recipients
 $extras['cc']=array(
     'recipient-with-name@example.org' => 'Recipient Name One',
     'no-name@example.org', // Note that this is not a key-value pair
     'named-recipient@example.org' => 'Recipient Name Two'
 );
 
-/* Configure Hiddencopy Recipients */
-
+// Hidden Copy Recipients
 $extras['bcc']=array(
     'recipient-with-name@example.org' => 'Recipient Name One',
     'no-name@example.org', // Note that this is not a key-value pair
     'named-recipient@example.org' => 'Recipient Name Two'
 );
 
-/* Configure the charset of mail */
-
+// Custom charset of mail
 $extras['charset']='iso-8859-1'; 
 $extras['html_charset']='UTF-8'; 
 $extras['plain_charset']='iso-8859-1'; 
-/* Configure the priority of mail */
-//1 greater important than 5 (1 to 5 integer value)
-$extras['priority']=2; 
 
-/* Attachment files to email (Works only if swiftmailer is enabled) */
+// Custom priority mail from 1 to 5 (1 greater important than 5)
+$extras['priority']=2;
 
+// Attachment files to email (Works only if swiftmailer is enabled)
 $extras['attachment']=array(
     './photos/sample.jpg',
     './photos/sample2.jpg',
     './photos/sample3.jpg'
 );
 
-/* send mail */
+// send mail
+fastMail($to,"my first email","My HTML body",$extras);</code></pre>
+<p>Note that in arrays of emails, not all need to be partners in key/value</p>
 
-fastMail("sample@example.org","my first email","My HTML body",$extras);</code></pre>
 
-            <h2>
-              <a id="start" class="anchor" href="#files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working with files
-            </h2>
 
-              <h3>
-                <a id="start" class="anchor" href="#getTime" aria-hidden="true"><span class="octicon octicon-link"></span></a>getTime()
-              </h3>
-              <p>Returns an array with the last access date, file modification and file changed</p>
-              <pre><code>$array = getTime('./photos/sample.jpg');</code></pre>
-              <p>Output:</p>
-              <pre><code>array(3) [
+
+<hr id="getTime" />
+<h3>
+  getTime()
+</h3>
+<p>Returns an array with the last access date, file modification and file changed info of file.</p>
+<pre class="params"><code>array getTime ( string $filename )</code></pre>
+<pre class="callback"><code>$array = getTime('./photos/sample.jpg');</code></pre>
+<pre class="output"><code>array(3) [
     'modified' => integer 1376052474
     'accessed' => integer 1376052474
     'changed' => integer 1376052474
 ]</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#getPermissions" aria-hidden="true"><span class="octicon octicon-link"></span></a>getPermissions()
-              </h3>
-              <p>Returns an array with three different formats of file permissions (Numeric, Octal and Full)</p>
-              <pre><code>$array = getTime('./photos/sample.jpg');</code></pre>
-              <p>Output:</p>
-              <pre><code>array(3) [
+
+
+<hr id="getPermissions" />
+<h3>
+  getPermissions()
+</h3>
+<p>Returns an array with three different formats of file permissions (Numeric, Octal and Full).</p>
+<pre class="params"><code>array getTime ( string $filename )</code></pre>
+<pre class="callback"><code>$array = getTime('./photos/sample.jpg');</code></pre>
+<pre class="output"><code>array(3) [
     'numeric' => integer 33188
     'octal' => string (4) "0644"
     'full' => string (10) "-rw-r--r--"
 ]</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#dir2array" aria-hidden="true"><span class="octicon octicon-link"></span></a>dir2array()
-              </h3>
-              <p>Convert in a complet array a selected folder and their subfolders</p>
-              <pre><code>$array = dir2array('./photos/',true);code></pre>
-              <p>Output:</p>
-              <pre><code>array(3) [
+
+
+<hr id="dir2array" />
+<h3>
+  dir2array()
+</h3>
+<p>Convert folder structure to multidimensional array with all info and content.</p>
+<pre class="params"><code>array dir2array ( string $foldername , bool $content = false);</code></pre>
+<pre class="callback"><code>$array = dir2array('./photos/', true);</code></pre>
+<pre class="output"><code>array(3) [
     array(10) [
         'name' => string (10) "sample.jpg"
         'path' => string (7) "photos/"
@@ -270,7 +347,7 @@ fastMail("sample@example.org","my first email","My HTML body",$extras);</code></
                     'full' => string (10) "-rw-r--r--"
                 ]
                 'content' => array(4) [
-                    'base64' => string (0) ""
+                    'base64' => string (0) "..."
                     'mime' => string (24) "image/jpeg"
                     'name' => string (11) "sample3.jpg"
                     'size' => integer 0
@@ -297,7 +374,7 @@ fastMail("sample@example.org","my first email","My HTML body",$extras);</code></
             'full' => string (10) "-rw-r--r--"
         ]
         'content' => array(4) [
-            'base64' => string (0) ""
+            'base64' => string (0) "..."
             'mime' => string (24) "image/jpeg"
             'name' => string (11) "sample2.jpg"
             'size' => integer 0
@@ -306,146 +383,193 @@ fastMail("sample@example.org","my first email","My HTML body",$extras);</code></
     ]
 ]</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#getMime" aria-hidden="true"><span class="octicon octicon-link"></span></a>getMime()
-              </h3>
-              <p>Returns the MIME information from a file in string format</p>
-              <pre><code>echo getMime('photo/sample.jpg');</code></pre>
-              <p>Output:</p>
-              <pre><code>image/jpeg</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#file2base64" aria-hidden="true"><span class="octicon octicon-link"></span></a>file2base64()
-              </h3>
-              <p>Returns an array with base64 code, mime, name & size of file</p>
-              <pre><code>$array = file2base64('photo/sample.jpg');</code></pre>
-              <p>Output:</p>
-              <pre><code>array(4) [
+
+<hr id="getMime" />
+<h3>
+  getMime()
+</h3>
+<p>Returns the MIME information from a file in string format.</p>
+<pre class="params"><code>string getMime ( string $filename )</code></pre>
+<pre class="callback"><code>echo getMime('photo/sample.jpg');</code></pre>
+<pre class="output"><code>image/jpeg</code></pre>
+
+
+
+<hr id="file2base64" />
+<h3>
+  file2base64()
+</h3>
+<p>Returns an array with base64 code, mime, name & size of file.</p>
+<pre class="params"><code>array file2base64 ( string $filename )</code></pre>
+<pre class="callback"><code>$array = file2base64('photo/sample.jpg');</code></pre>
+<pre class="output"><code>array(4) [
     'base64' => string (11584) "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"
     'mime' => string (9) "image/png"
     'name' => string (11) "redmine.png"
     'size' => integer 8687
 ]</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#getExtension" aria-hidden="true"><span class="octicon octicon-link"></span></a>getExtension()
-              </h3>
-              <p>Returns the extension of a file in string value</p>
-              <pre><code>echo getExtension('photo/sample.jpeg');</code></pre>
-              <p>Output:</p>
-              <pre><code>jpeg</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#size2size" aria-hidden="true"><span class="octicon octicon-link"></span></a>size2size()
-              </h3>
-              <p>Convert size values (Available formats: B, KB, MB, GB, TB PB, EB, ZB, YB)</p>
-              <pre><code>echo size2size(1024,'GB','KB',2);</code></pre>
-              <p>Output:</p>
-              <pre><code>1.073.741.824,00 kB</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#fileHash" aria-hidden="true"><span class="octicon octicon-link"></span></a>fileHash()
-              </h3>
-              <p>Returns the sha1 hash from base64 code of file</p>
-              <pre><code>echo fileHash('photo/sample.jpeg');</code></pre>
+<hr id="getExtension" />
+<h3>
+  getExtension()
+</h3>
+<p>Returns the extension of a file in string value.</p>
+<pre class="params"><code>string getExtension( string $filename )</code></pre>
+<pre class="callback"><code>echo getExtension('photo/sample.jpeg');</code></pre>
+<pre class="output"><code>jpeg</code></pre>
 
-            <h2>
-              <a id="start" class="anchor" href="#server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working with server and user
-            </h2>
 
-              <h3>
-                <a id="start" class="anchor" href="#getIP" aria-hidden="true"><span class="octicon octicon-link"></span></a>getIP()
-              </h3>
-              <p>Returns the user's real IP avoiding proxy in string format</p>
-              <pre><code>echo getIP();</code></pre>
-              <p>Output sample:</p>
-              <pre><code>84.20.14.219</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#noCache" aria-hidden="true"><span class="octicon octicon-link"></span></a>noCache()
-              </h3>
-              <p>Add php headers for disable cache</p>
-              <pre><code>noCache();</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#redirect" aria-hidden="true"><span class="octicon octicon-link"></span></a>redirect()
-              </h3>
-              <p>add php header location for redirect</p>
-              <pre><code>echo getIP();</code></pre>
-              <p>Output sample:</p>
-              <pre><code>84.20.14.219</code></pre>
+<hr id="size2size" />
+<h3>
+  size2size()
+</h3>
+<p>Convert size values (Available formats: B, KB, MB, GB, TB PB, EB, ZB, YB).</p>
+<pre class="params"><code>string size2size( int $size, string $from, string $to, int $decimals)</code></pre>
+<pre class="callback"><code>echo size2size(1024, 'GB', 'KB', 2);</code></pre>
+<pre class="output"><code>1.073.741.824,00 kB</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#userLanguage" aria-hidden="true"><span class="octicon octicon-link"></span></a>userLanguage()
-              </h3>
-              <p>Returns an array (neat to priorities) with user languages</p>
-              <pre><code>echo userLanguage();</code></pre>
-              <p>Sample output:</p>
-              <pre><code>array(3) [
+
+
+<hr id="fileHash" />
+<h3>
+  fileHash()
+</h3>
+<p>Returns the sha1 hash of base64 code of file.</p>
+<pre class="params"><code>string fileHash ( string $filename )</code></pre>
+<pre class="callback"><code>echo fileHash('photo/sample.jpeg');</code></pre>
+<pre class="output"><code>2f60ae16c1796833fa805ded056e725381aab037</code></pre>
+
+
+
+<hr id="getUserIp" />
+<h3>
+  getUserIp()
+</h3>
+<p>Returns the real user's IP avoiding proxy in string format.</p>
+<pre class="params"><code>string getUserIp ( )</code></pre>
+<pre class="callback"><code>echo getUserIp();</code></pre>
+<pre class="output"><code>84.20.14.219</code></pre>
+
+
+
+<hr id="disableCache" />
+<h3>
+  disableCache()
+</h3>
+<p>Add php headers to disable cache.</p>
+<pre class="params"><code>disableCache ( )</code></pre>
+<pre class="callback"><code>disableCache();</code></pre>
+
+
+
+<hr id="redirect" />
+<h3>
+  redirect()
+</h3>
+<p>Adding php header location for create redirects.</p>
+<pre class="params"><code>redirect ( string $url, bool $permanent )</code></pre>
+<pre class="callback"><code>redirect('http://bootils.oriolet.net', true);</code></pre>
+
+
+
+<hr id="getUserLanguages" />
+<h3>
+  getUserLanguages()
+</h3>
+<p>Returns an array (neat to priorities) with user languages.</p>
+<pre class="params"><code>egetUserLanguages ( ) </code></pre>
+<pre class="callback"><code>$result = getUserLanguages();</code></pre>
+<pre class="output"><code>array(3) [
     string (2) "ca"
     string (2) "es"
     string (2) "en"
 ]</code></pre>
 
-            <h2>
-              <a id="start" class="anchor" href="#strings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working with strings
-            </h2>
+<hr id="asciQuotes" />
+<h3>
+  asciQuotes()
+</h3>
+<p>Convert ASCI quotes to text format (to clean text, before saving it to the database).</p>
+<pre class="params"><code>string asciQuotes( string $text ) </code></pre>
+<pre class="callback"><code>$newText = asciQuotes($text);</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#asciQuotes" aria-hidden="true"><span class="octicon octicon-link"></span></a>asciQuotes()
-              </h3>
-              <p>Convert ASCI quotes to text format (to clean text, before saving it to the database)</p>
-              <pre><code>$newText = asciQuotes($text);</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#smartQuotes" aria-hidden="true"><span class="octicon octicon-link"></span></a>smartQuotes()
-              </h3>
-              <p>Convert smart quotes to text format (to clean text, before saving it to the database)</p>
-              <pre><code>$newText = smartQuotes($text);</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#string2url" aria-hidden="true"><span class="octicon octicon-link"></span></a>string2url()
-              </h3>
-              <p>Returns the string without spaces or symbols to build friendly URL</p>
-              <pre><code>echo string2url("Sample's text for create friendly url");</code></pre>
-              <p>Output sample:</p>
-              <pre><code>sample-s-text-to-create-direndly-url</code></pre>
+<hr id="smartQuotes" />
+<h3>
+  smartQuotes()
+</h3>
+<p>Convert smart quotes to text format (to clean text, before saving it to the database).</p>
+<pre class="params"><code>string smartQuotes ( string $text )</code></pre>
+<pre class="callback"><code>$newText = smartQuotes($text);</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#cut" aria-hidden="true"><span class="octicon octicon-link"></span></a>cut()
-              </h3>
-              <p>Cut a length of text characters you want, without breaking any word</p>
-              <pre><code>$newText = cut($text, 100, true);</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#checkLink" aria-hidden="true"><span class="octicon octicon-link"></span></a>checkLink()
-              </h3>
-              <p>Checks whether the link contains protocol, if negative adds it</p>
-              <pre><code>echo checkLink($myLinnk,'ftp://');</code></pre>
-              <p>Protocol parameter is optional, the default protocol is "http://"</p>
+<hr id="string2url" />
+<h3>
+  string2url()
+</h3>
+<p>Returns the string without spaces or symbols to build friendly URL.</p>
+<pre class="params"><code>string string2url ( string $url )</code></pre>
+<pre class="callback"><code>echo string2url("Sample's text for create friendly url");</code></pre>
+<pre class="output"><code>sample-s-text-to-create-direndly-url<</code></pre>
 
-              <h3>
-                <a id="start" class="anchor" href="#html2txt" aria-hidden="true"><span class="octicon octicon-link"></span></a>html2txt()
-              </h3>
-              <p>Converts html to plain text maintaining a human readable format without losing links</p>
-              <pre><code>$mailPlainText= html2txt($bodyHtml);</code></pre>
 
-          <h1>
-            <a id="bootils-is-easy" class="anchor" href="#external" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thirt part libraries included
-          </h1>
-            <p>Bootils include 2 popular libraries, Kint and Swiftmailer.</p>
+<hr id="cut" />
+<h3>
+  cut()
+</h3>
+<p>Cut a length of text characters you want, without breaking any word.</p>
+<pre class="params"><code>string  ( string $text, int $limit, bool $ellipsis)</code></pre>
+<pre class="callback"><code>$newText = cut("Sample text with more than 10 characters", 10, true);</code></pre>
+<pre class="output"><code>Sample text ...</code></pre>
 
-            <h2>
-              <a id="start" class="anchor" href="#kint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kint
-            </h2>
-            <p>Kint is a modern and powerful PHP debugging helper. You can see more about the features and licensing on <a href="http://raveren.github.io/kint/" target="_blank">Kint Webpage</a></p>
-            <p>The most popular functions of KINT, are (s()) and (d()) used for replace the useless (var_dump()) or (print_r())</p>
 
-            <h2>
-              <a id="start" class="anchor" href="#Swiftmailer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Swiftmailer
-            </h2>
-            <p>Swiftmailer is a free Feature-rich PHP Mailer. You can see more about the features and licensing on <a href="http://http//swiftmailer.org/" target="_blank">Swiftmailer Webpage</a></p>
-            <p>This library is used in the quick access bootils function (fastMail()) if swiftmailer is enabled</p>
+<hr id="checkLink" />
+<h3>
+  checkLink()
+</h3>
+<p>Check and add protocol to link.</p>
+<pre class="params"><code>bool checkLink ( string $link, string $protocol = 'http://' )</code></pre>
+<pre class="callback"><code>echo checkLink('bootils.oriolet.net','ftp://');</code></pre>
+<pre class="output"><code>ftp://bootils.oriolet.net</code></pre>
+
+
+<hr id="html2txt" />
+<h3>
+  html2txt()
+</h3>
+<p>Converts html to plain text maintaining a human readable format without losing links and breaklines.</p>
+<pre class="params"><code>string html2txt( string $bodyHtml )</code></pre>
+<pre class="callback"><code>$mailPlainText= html2txt($bodyHtml);</code></pre>
+
+
+<hr id="s" />
+<h3>
+  s()
+</h3>
+<p>Make a readable var_dump() using Kint library (works only if kint is enabled).</p>
+<pre class="params"><code> s ( mixed $value )</code></pre>
+<pre class="callback"><code>s();</code></pre>
+<pre class="output"><code>array(3) [
+    string (2) "ca"
+    string (2) "es"
+    string (2) "en"
+]</code></pre>
+
+
+<hr id="d" />
+<h3>
+  d()
+</h3>
+<p>Make a readable and usable print_r() using Kint library (works only if kint is enabled).</p>
+<pre class="params"><code>d ( mixed $value)</code></pre>
+<pre class="callback"><code>d($array);</code></pre>
+
 
         </section>
 
