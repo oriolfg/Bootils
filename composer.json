@@ -1,26 +1,37 @@
 {
-    "name": "oriolet/bootils",
-    "description": "Bootils - Basic utilities fo PHP developers",
-    "keywords": ["bootils", "php", "utils", "basic"],
-    "type": "library",
-    "version": "2.0",
-    "homepage": "https://github.com/oriolet/bootils",
-    "license": "MIT",
-    "authors": [
+    "repositories": [
         {
-            "name": "Oriol Ferràndez Grau",
-            "homepage": "https://github.com/oriolet"
-        },
-        {
-            "name": "Contributors",
-            "homepage": "https://github.com/oriolet/bootils/contributors"
+            "type": "package",
+            "package": {
+                "name": "oriolet/bootils",
+                "description": "Bootils - Basic utilities fo PHP developers",
+                "keywords": ["bootils", "php", "utils", "basic"],
+                "version": "stable-master",
+
+                "source": {
+                    "url": "git://github.com/oriolet/Bootils.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "files": ["Bootils/Bootils.php"]
+                },
+                "require": {
+                    "php": ">=5.2.0"
+                },
+                "license": "MIT",
+                "homepage": "http://oriolet.github.io/Bootils/",
+                "authors": [
+                    {
+                        "name": "Oriol Ferràndez Grau",
+                        "homepage": "https://github.com/oriolet"
+                    },
+                    {
+                        "name": "Contributors",
+                        "homepage": "https://github.com/oriolet/bootils/contributors"
+                    }
+                ]
+            }
         }
-    ],
-    "require": {
-        "php": ">=5.2.0"
-    },
-    "minimum-stability": "stable",
-    "autoload": {
-        "files": ["Bootils/Bootils.php"]
-    }
+    ]
 }
