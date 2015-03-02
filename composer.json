@@ -1,9 +1,8 @@
 {
     "name": "oriolet/bootils",
+    "type": "library",
     "description": "Bootils - Basic utilities fo PHP developers",
     "keywords": ["bootils", "php", "utils", "basic"],
-    "type": "library",
-    "version": "stable-master",
     "homepage": "http://oriolet.github.io/Bootils/",
     "license": "MIT",
     "authors": [
