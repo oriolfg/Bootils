@@ -29,7 +29,7 @@
 
         <header>
           <h1>Bootils</h1>
-          <h2>Over 25 basic functions that your PHP projects must have</h2>
+          <h2>Basic utilities for PHP developers</h2>
         </header>
 
         <section id="downloads" class="clearfix">
@@ -48,58 +48,71 @@
 <a id="bootils-is-easy" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h1>
 <h2>
 <a id="start" class="anchor" href="#default" aria-hidden="true"><span class="octicon octicon-link"></span></a>With default values</h2>
-<p>The easiest way is simply a require_once</p>
+<p>The easiest way is simply:</p>
 
-<pre><code>require_once('bootils/start.bootils.php');</code></pre>
+<p>Classical installation</p>
+<pre><code>// Require the library
+require_once('bootils/Bootils.php');
 
+// Initialize it
+$bootils = new Bootils\Core();</code></pre>
+
+<p>Installation using Composer (the php package manager)</p>
+<pre><code> "require": {
+       ...
+       "oriolet/bootils": "dev-master"
+    }</code></pre>
 <h2>
-<a id="start" class="anchor" href="#custom" aria-hidden="true"><span class="octicon octicon-link"></span></a>With custom defaults</h2>
-<p>but if you wish or need, you can define default values before the required file bootils file<</p>
+<pre><code>// Require the library
+require_once('vendor/autoload.php');
 
-<pre><code>// Define default regional values
-$_bootils['DEFAULT_LANGUAGE_LOCALE'] = 'ca_ES'; // Default value is en_GB
-$_bootils['DEFAULT_DATE_FORMAT'] = '%A, %e de %B de %Y'; // Default value is %A %d %B %
-$_bootils['DEFAULT_COMA_SEPARATOR'] = ','; // Default value is .
-$_bootils['DEFAULT_THOUSAND_SEPARATOR'] = '.'; // Default value is ,
+// Initialize it
+$bootils = new Bootils\Core();</code></pre>
 
-// Define external libraries
-$_bootils['KINT'] = true; // Don't like KINT?, you are free to delete the third/kint folder to save space.
-$_bootils['SWIFTMAILER'] = true; // Don't like SWIFTMAILER?, you are free to delete the third/swift folder.
+<a id="start" class="anchor" href="#custom" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optional bootils values</h2>
+<p>You can configure bootils after started, in the sample (In the examples we set the defaults already have, if not configured)</p>
 
-// Define default mail values
-$_bootils['MAIL_CHARSET']='UTF-8'; // Default value is UTF-8
-$_bootils['MAIL_CHARSET_PLAIN']='UTF-8'; // Default value is UTF-8
-$_bootils['MAIL_CHARSET_HTML']='UTF-8'; // Default value is UTF-8
-$_bootils['MAIL_SENDER_MAIL']="sender@example.org"; // Default value is blank
-$_bootils['MAIL_SENDER_NAME']="Sender Name"; // Default value is blank
+<pre><code>// Debug options
+$bootils->setDebug(false);
 
-// Define default smtp mail values (only works if swiftmailer is enabled)
-$_bootils['SMTP_HOST']="localhost"; // Default value is localhost
-$_bootils['SMTP_USER']="mailusername"; // Default value is blank
-$_bootils['SMTP_PASSWORD']="mailpassword"; // Default value is blank
-$_bootils['SMTP_PORT']=25; // Default value is 25
+// Regional configuration
+$bootils->setLocales('en_GB.utf8');
+$bootils->setComaSeparator('.');
+$bootils->setThousendSeparator(',');
+$bootils->setDateFormat("%A %d %B %Y");
 
-// Define default extra mail values (only works if swiftmailer is enabled)
-$_bootils['SMTP_ANTIFLOOD']=true; // For massive sending (default true)
-$_bootils['SMTP_ANTIFLOOD_MAILS']=100; // number of emails between breaks (default 100)
-$_bootils['SMTP_ANTIFLOOD_PAUSE']=30; // Seconds-long break before continuing (default 30)
+// Error values
+$bootils->displayErrors = true;
+$bootils->errorReporting = true;
+$bootils->eError = true;
+$bootils->eE_recoverable_error = true;
+$bootils->eWarning = true;
+$bootils->eParse = true;
+$bootils->eStrict = true;
+$bootils->eNotice = true;
+$bootils->eDeprecated = true;
+$bootils->eUser_deprecated = true;
 
-// Define php errors
-$_bootils['ERROR_REPORTING']=true; // Sets which PHP errors are reported
-$_bootils['DISPLAY_ERRORS']=true; // Set true to see errors on the web or false to see only in log files
+// Mail general values
+$bootils->setMailCharset = 'UTF-8';
+$bootils->setMailCharset_plain = 'UTF-8';
+$bootils->setMailCharset_html = 'UTF-8';
+$bootils->setMailSender_mail = 'bootils@sample.org';
+$bootils->setMailSender_name = false;
+$bootils->setMailReply_to_mail = 'bootils@sample.org';
+$bootils->setMailReply_to_name = false;
 
-// Define what you want to hide error
-$_bootils['HIDE_ERROR'] = true;
-$_bootils['HIDE_RECOVERABLE_ERROR'] = true;
-$_bootils['HIDE_WARNING'] = true;
-$_bootils['HIDE_PARSE'] = true;
-$_bootils['HIDE_STRICT'] = true;
-$_bootils['HIDE_NOTICE'] = true;
-$_bootils['HIDE_USER_DEPRECATED'] = true;
-$_bootils['HIDE_DEPRECATED'] = true;
+// Mail SMTP values
+$bootils->setSmtpHost = "localhost"; // only need configure if works with Swiftmailer or PHPMailer
+$bootils->setSmtpProtocol = "tls"; // only need configure if works with PHPMailer
+$bootils->setSmptUser = false; // only need configure if works with Swiftmailer or PHPMailer
+$bootils->setSmtpPassword = false; // only need configure if works with Swiftmailer or PHPMailer
+$bootils->setSmtpPort = 25; // only need configure if works with Swiftmailer or PHPMailer
 
-// Now we can call bootils with custom default values predefined
-require_once('bootils/start.bootils.php');</code></pre>
+// Mail Antiflood values
+$bootils->setSmtpAntiflood = true; // For massive sending - only need configure if works with Swiftmailer
+$bootils->setSmtpAntiflood_mails = 100; // number of emails between breaks - only need configure if works with Swiftmailer
+$bootils->setSmtpAntiflood_pause = 30; // Seconds-long break before continuing - only need configure if works with Swiftmailer</code></pre>
         </section>
 
         <footer>
