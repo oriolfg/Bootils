@@ -270,7 +270,6 @@ class Core
             if ($this->error_reporting) {
                 $tmp=array();
                 if ($this->e_error == false) {
-                    s('sdfsdf');
                     $tmp[]='E_ERROR';
                 }
                 if (!$this->e_recoverable_error) {
