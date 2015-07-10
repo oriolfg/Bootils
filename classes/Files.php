@@ -41,7 +41,10 @@ function dir2array($dir, $content)
 }
 function getMime($value)
 {
-    return image_type_to_mime_type(exif_imagetype($value));
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    $result = finfo_file($finfo, $value) . "\n";
+    finfo_close($finfo);
+    return $result;
 }
 function getTime($value)
 {

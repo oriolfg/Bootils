@@ -87,11 +87,14 @@ function string2url($string = '')
 function cut($value, $size = 100, $ellipsis = true)
 {
     $contador = 0;
-    $arrayText = split(' ', $value);
+    $arrayText = preg_split("/\s+/", $value);
     $text2 = '';
-    while ($size >= strlen($text2) + strlen($arrayText[$contador])) {
-        $text2 .= ' '.$arrayText[$contador];
-        $contador++;
+    foreach ($arrayText as $word) {
+        if ($size >= strlen($text2) + strlen($word)) {
+            $text2 .= ' '.$word;
+        } else {
+            break;
+        }
     }
     if (strlen($value)>strlen($text2) && $ellipsis == true) {
         $text2 .= '...';
