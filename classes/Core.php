@@ -340,7 +340,7 @@ class Core
     // Cut string length without cut the words
     public function cut($string, $size = 100, $ellipsis = true)
     {
-        return string2url($string, $size, $ellipsis);
+        return cut($string, $size, $ellipsis);
     }
     // Convert strint text to plain text
     public function html2txt($string)
