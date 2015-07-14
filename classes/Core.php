@@ -270,7 +270,6 @@ class Core
             if ($this->error_reporting) {
                 $tmp=array();
                 if ($this->e_error == false) {
-                    s('sdfsdf');
                     $tmp[]='E_ERROR';
                 }
                 if (!$this->e_recoverable_error) {
@@ -386,11 +385,6 @@ class Core
     public function size2size($value = null, $from = 'B', $to = 'MB', $decimals = 2)
     {
         return size2size($value, $from, $to, $decimals, $this->coma_separator, $this->thousand_separator);
-    }
-    // Returns base65 of sha1 of file
-    public function fileHash($file)
-    {
-        return fileHash($file);
     }
 
     /*
