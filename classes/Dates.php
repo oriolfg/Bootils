@@ -26,7 +26,7 @@ function now()
     $date = date_create();
     $array = array(
         'unix' => date_timestamp_get($date),
-        'human' => $this->unix2locale(date_timestamp_get($date)),
+        'human' => unix2locale(date_timestamp_get($date)),
         'object' => $date
     );
     return $array;

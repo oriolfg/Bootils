@@ -192,8 +192,7 @@ class Core
     // Get current date in various formats
     public function now()
     {
-        $server = new Dates;
-        return $server->now();
+        return now();
     }
     /*
     * Errror
@@ -311,7 +310,7 @@ class Core
     */
     public function sortByField($array = array(), $field = null, $inverse = false)
     {
-        return Arrays::sortByField($array, $field, $inverse);
+        return sortByField($array, $field, $inverse);
     }
 
     /*

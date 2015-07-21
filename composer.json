@@ -1,7 +1,7 @@
 {
     "name": "oriolet/bootils",
     "type": "library",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Bootils - Basic utilities fo PHP developers",
     "keywords": ["bootils", "php", "utils", "basic"],
     "homepage": "http://oriolet.github.io/Bootils/",
