@@ -86,7 +86,6 @@ function string2url($string = '')
 }
 function cut($value, $size = 100, $ellipsis = true)
 {
-    $contador = 0;
     $arrayText = preg_split("/\s+/", $value);
     $text2 = '';
     foreach ($arrayText as $word) {
@@ -124,7 +123,6 @@ function iterateOverNode($node)
         return "";
     }
     $nextName = nextChildName($node);
-    $prevName = prevChildName($node);
     $name = strtolower($node->nodeName);
     switch ($name) {
         case "hr":
