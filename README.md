@@ -1,12 +1,12 @@
-# <a name="top"></a> [Bootils](http://bootils.oriolet.net)
+# <a name="top"></a> [Bootils](https://oriolfg.github.io/Bootils/)
 
 Bootils - Basic utilities fo PHP developers
 
-Discover more at <a href="http://oriolet.github.io/Bootils/">http://oriolet.github.io/Bootils/</a>
+Discover more at <a href="https://oriolfg.github.io/Bootils/">https://oriolfg.github.io/Bootils/</a>
 
 ## Author
 
-**Oriol Ferràndez Grau** (Oriolet)
+**Oriol Ferràndez Grau** @oriolfg
 
 ## License
 
