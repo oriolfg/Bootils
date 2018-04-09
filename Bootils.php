@@ -2,17 +2,18 @@
 /**
  * Bootils Start file
  *
- * Just do a require_once this file so that bootils do the rest for you, totally unaware of the internal routes, it will work automatically.
+ * Just do a require_once this file so that bootils do the rest for you, totally
+ * unaware of the internal routes, it will work automatically.
  *
- * Bootils version 1.0
+ * PHP version 5
  *
  * LICENSE: Read the LICENSE atached file in original package
  *
- * @category   Basic utilities for PHP Developers
- * @package    Bootils
- * @author     Oriol Ferràndez Grau <oriolet@oriolet.com>
- * @version    2.0
- * @link       http://oriolet.github.io/Bootils/
+ * @category Bootstrap_File
+ * @package  Bootils
+ * @author   Oriol Ferràndez Grau github.com/oriolfg <oriol@ferrandez.cat>
+ * @license  Licensed under the MIT License http://opensource.org/licenses/MIT
+ * @link     http://oriolet.github.io/Bootils/
  */
 
 ini_set("default_charset", "utf-8");
