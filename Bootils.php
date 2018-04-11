@@ -17,7 +17,6 @@
  */
 
 ini_set("default_charset", "utf-8");
-header('Content-Type: text/html; charset=utf-8');
 
 define('BOOTILS_DIR', dirname(__FILE__).'/');
 
